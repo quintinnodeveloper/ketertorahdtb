@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: a121Y0NgOByqGev6ehNpLOCuuNea61wM2hBRxvmoplv2v2jqqjwuTui
+      MYSQL_DATABASE: db_keter
+      MYSQL_USER: keter
+      MYSQL_PASSWORD: a121Y0NgOByqGev6ehNpLOCuuNea61wM2hBRxvmoplv2v2jqqjwuTui
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+volumes:
+  mysql-data:
+
+networks:
+  app-network:
+    driver: bridge
