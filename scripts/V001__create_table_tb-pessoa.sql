@@ -16,7 +16,7 @@ create table if not exists tb_pais (
     constraint pk_pais_code primary key (code)
 );
 
-create table if not exists tb_cor_raca (
+create table if not exists tb_cor (
     code int auto_increment not null,
     descricao varchar(100) not null,
     constraint pk_cor_raca_code primary key (code)
@@ -37,6 +37,7 @@ create table if not exists tb_estado_civil (
 create table if not exists tb_pessoa (
 	code int auto_increment not null,
 	descricao_tipo_pessoa enum("pessoa_fisica", "pessoa_juridica") not null,
+    descricao_tipo_genero enum("feminino", "masculino") not null,
 	id_pais_nascimento int null,
     id_cor_raca int null,
     id_tipo_sanguineo int null,
